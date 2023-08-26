@@ -69,4 +69,7 @@ input {
   padding: 4px; 
   margin: 8px 0px;
 }
+span {
+  font-weight: 600;
+}
 `;
