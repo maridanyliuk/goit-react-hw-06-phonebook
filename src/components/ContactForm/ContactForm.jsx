@@ -22,7 +22,7 @@ export const ContactForm = () => {
     );
 
     if (isExist) {
-      return;
+      alert(`${values.name} is already in your contacts list`);
     }
 
     dispatch(addContact({ ...values, id: nanoid() }));
