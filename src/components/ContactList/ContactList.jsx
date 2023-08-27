@@ -1,6 +1,16 @@
-import PropTypes from 'prop-types';
+import { deleteContact } from 'redux/contactSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { getContacts, } from 'redux/contactSlice';
 
-export const ContactList = ({ contacts, onDelete }) => {
+export const ContactList = () => {
+
+  const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+
+   const onDelete = id => {
+    dispatch(deleteContact(id));
+  };
+
   return (
     <ul>
       {contacts.map(contact => {
@@ -17,9 +27,4 @@ export const ContactList = ({ contacts, onDelete }) => {
       })}
     </ul>
   );
-};
-
-ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired,
-  onDelete: PropTypes.func.isRequired,
 };

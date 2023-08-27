@@ -40,10 +40,10 @@ export const App = () => {
     <div>
       <GlobalStyle />
       <h1>Phonebook</h1>
-      <ContactForm onAdd={doAddContact} />
+      <ContactForm />
       <h2>Contacts</h2>
-      <Filter filter={filter} onChangeInput={onChangeInput} />
-      <ContactList contacts={filterNew()} onDelete={doDeleteContact} />
+      <Filter />
+      <ContactList />
     </div>
   );
 };
